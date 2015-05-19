@@ -1,0 +1,106 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, command {
+	display: block;
+}
+
+::selection {
+	border: 0;
+	outline: 0;
+	background: none;
+	text-shadow: none;
+}
+
+button {
+	-webkit-appearance: none;
+	background: none;
+	border: 0;
+	outline: 0;
+}
+
+.btn {
+	display: table-cell;
+}
+
+.btn command, .btn span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+
+
+
+.tab-content {
+	padding: <%=ui.scale*6 %>px <%=ui.scale*15 %>px;
+  	border-top: 1px solid #adadad;
+}
+.tab-content.gray {
+	background: #fff;
+	border-top: 0;
+	border-bottom: 1px solid #adadad;
+}
+.tab {
+	display:-webkit-box;
+	border: <% if(ui.scale > 2) { %><%=ui.scale %><% } else { %>2<% } %>px solid #157dfb;
+	-webkit-border-radius: <%=ui.scale*5 %>px;
+	border-radius: <%=ui.scale*5 %>px;
+}
+.tab .command {
+	-webkit-box-flex: 1;
+	border-right: <% if(ui.scale > 2) { %><%=ui.scale %><% } else { %>2<% } %>px solid #157dfb;
+	padding: <%=ui.scale*4 %>px;
+	font-size: <%=ui.scale*.8 %>rem;
+	font-weight: 300;
+	color: #157dfb;
+	text-align: center;
+}
+.tab-content.gray .tab, .tab-content.gray .tab .command {
+	border-color: #848484;
+	color: #848484;
+}
+.tab-content.gray .tab .command.active, .tab-content.gray .tab .command.pressed {
+	background: #848484;
+	color: #fff;
+}
+.tab .command:first-child {
+	-webkit-border-radius: <%=ui.scale*3 %>px;
+	border-radius: <%=ui.scale*3 %>px;
+	-webkit-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.tab .command:last-child {
+	-webkit-border-radius: <%=ui.scale*3 %>px;
+	border-radius: <%=ui.scale*3 %>px;
+	-webkit-border-top-left-radius: 0;
+	border-top-left-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-right: 0;
+}
+.tab .command.active, .tab .command.pressed {
+	background: #157dfb;
+	color: #fff;
+}
+
+
+
+
+
+
+.btn-back {
+	height: 100%;
+}
+
+.btn-back span {
+	font-size: <%=ui.scale*1.2 %>rem;
+	color: #157dfb;
+	text-indent: <%=ui.scale*3 %>px;
+	line-height: <%=ui.scale*30 %>px;
+}
+
+.icon-back {
+	width: <%=ui.scale*15 %>px;
+	height: <%=ui.scale*30 %>px;
+	background-image: url('modules/frameworks/img/back.png');
+}

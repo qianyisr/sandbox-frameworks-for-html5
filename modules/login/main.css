@@ -1,0 +1,201 @@
+<%
+	var videoWidth = ui.width,
+	videoHeight = ui.width * 1.78
+%>
+#viewport {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+	#viewport video {
+		position: absolute;
+		width: <%=videoWidth %>;
+		height: <%=videoHeight %>;
+	}
+
+	#viewport .overlay {
+		position: absolute;
+		top: <%=ui.scale * 80 %>px;
+		bottom: 0;
+		z-index: 99;
+		width: 100%;
+      	background-image: -webkit-linear-gradient(rgba(0,0,0,.0), rgba(0,0,0,.7));
+      	overflow: hidden;
+	}
+		.logo {
+			margin: <%=ui.height * .05 %>px auto <%=ui.scale * 10 %>px;
+			width: <%=ui.scale * 120 %>px;
+			height: <%=ui.scale * 70 %>px;
+			background: url('<%=module.uri %>/svg/logo.svg') center no-repeat;
+			background-size: 90%;
+		}
+		.logo_text {
+			margin-bottom: <%=ui.scale * 10 %>px;
+			color: #fff;
+			font-size: <%=ui.scale * 30 %>px;
+			text-align: center;
+			font-weight: 800;
+			text-shadow: 1px 1px 1px #fff;
+		}
+		.logo_des {
+			color: #47d8cb;
+			font-size: <%=ui.scale * 20 %>px;
+			text-align: center;
+		}
+
+		.login_action {
+			position: absolute;
+			bottom: <%=ui.scale * 10 %>px;
+			width: 100%;
+			text-align: center;
+		}
+
+		.phone {
+			width: <%=ui.scale * 132 %>px;
+			height: <%=ui.scale * 40 %>px;
+			margin-right: <%=ui.scale * 10 %>px;
+			background: #47d8cb url('<%=module.uri %>/svg/phone.svg') center no-repeat;
+			background-size: auto 70%;
+			border: 0;
+			-webkit-border-radius: <%=ui.scale * 40 %>px;
+			-moz-border-radius: <%=ui.scale * 40 %>px;
+			border-radius: <%=ui.scale * 40 %>px;
+		}
+		.weibo {
+			width: <%=ui.scale * 132 %>px;
+			height: <%=ui.scale * 40 %>px;
+			background: #fd5968 url('<%=module.uri %>/svg/weibo.svg') center no-repeat;
+			background-size: auto 70%;
+			border: 0;
+			-webkit-border-radius: <%=ui.scale * 40 %>px;
+			-moz-border-radius: <%=ui.scale * 40 %>px;
+			border-radius: <%=ui.scale * 40 %>px;
+		}
+
+		.phone_login_bg {
+			position: absolute;
+			left: <%=ui.width * -2%>px;
+			bottom: <%=ui.width * -2%>px;
+			width: <%=ui.width * 4%>px;
+			height: <%=ui.width * 4%>px;
+			z-index: 99;
+			border-radius: <%=ui.width * 2%>px;
+			-webkit-border-radius: <%=ui.width * 2%>px;
+			background: #47d8cb;
+			-webkit-transform: scale(0) translateZ(0px);
+		}
+
+		.show_login_bg {
+			-webkit-transform: scale(1) translateZ(0px);
+			-webkit-animation: scaleBounce .4s linear;
+			-moz-animation: scaleBounce .4s linear;
+			-ms-animation: scaleBounce .4s linear;
+			-o-animation: scaleBounce .4s linear;
+			animation: scaleBounce .4s linear;
+		}
+
+		@-webkit-keyframes scaleBounce {
+			0% {
+				-webkit-transform: scale(0) translateZ(0px);
+			}100%{
+				-webkit-transform: scale(1) translateZ(0px);
+			}
+		}
+
+		.phone_login_box {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 101;
+		}
+
+			.phone_login_box .close {
+				display: block;
+				position: absolute;
+				top: <%=ui.scale * 5%>px;
+				left: <%=ui.scale * 5%>px;
+				width: <%=ui.scale * 30%>px;
+				height: <%=ui.scale * 30%>px;
+				background: url('<%=module.uri %>/svg/close.svg') center no-repeat;
+				background-size: 60%;
+			}
+
+			.show_login_box {
+				visibility: visible;
+				-webkit-animation-duration: 300ms;
+				-webkit-animation-name: fadein;
+				-moz-animation-duration: 300ms;
+				-moz-animation-name: fadein;
+				animation-duration: 300ms;
+				animation-name: fadein;
+				animation-delay: 400ms;
+				-moz-animation-delay: 400ms;
+				-webkit-animation-delay: 400ms;
+				-webkit-animation-fill-mode: forwards;
+				-moz-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+			}
+
+			@-webkit-keyframes fadein {
+			    from { opacity: 0; }
+			    to { opacity: 1; }
+			}
+			@-moz-keyframes fadein {
+			    from { opacity: 0; }
+			    to { opacity: 1; }
+			}
+			@keyframes fadein {
+			    from { opacity: 0; }
+			    to { opacity: 1; }
+			}
+
+			.icon-phone {
+				margin: <%=ui.scale * 60 %>px auto <%=ui.scale * 30 %>px;
+				width: <%=ui.scale * 80 %>px;
+				height: <%=ui.scale * 80 %>px;
+				background: url('<%=module.uri %>/svg/phone.svg') center no-repeat;
+				background-size: auto 100%;
+				border: 0;
+			}
+
+			#phone_input {
+				display: block;
+				margin: 0px auto <%=ui.scale * 30 %>px;
+				width: 70%;
+				max-width: <%=ui.scale * 520 %>px;
+				height: <%=ui.scale * 32 %>px;
+				-webkit-border-radius: <%=ui.scale * 4 %>px;
+				border-radius: <%=ui.scale * 4 %>px;
+				padding: 0 <%=ui.scale * 10 %>px;
+				font-size: <%=ui.scale * 14 %>px;
+			}
+
+			.sub_button {
+				display: block;
+				margin: 0 auto;
+				width: <%=ui.scale * 113 %>px;
+				height: <%=ui.scale * 35 %>px;
+				border: <%=ui.scale * 2 %>px solid #fff;
+				color: #fff;
+				font-weight: bold;
+				font-size: <%=ui.scale * 20 %>px;
+				-webkit-border-radius: <%=ui.scale * 6 %>px;
+				-moz-border-radius: <%=ui.scale * 6 %>px;
+				border-radius: <%=ui.scale * 6 %>px;
+			}
+
+			.note {
+				position: absolute;
+				bottom: <%=ui.scale * 15 %>px;
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-size: <%=ui.scale * 14 %>px;
+			}

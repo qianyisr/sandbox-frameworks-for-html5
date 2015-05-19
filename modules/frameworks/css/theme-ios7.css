@@ -1,0 +1,129 @@
+/* 兼容ios7中一个像素的边界被显示成两个像素的问题 */
+body {
+	font-family: "Helvetica Neue","Helvetica","sans-serif";
+}
+@global {
+	headerHeight : 62dp;
+	footerHeight : 59dp;
+}
+header {
+	padding-top: 20dp;
+	min-height: 42dp;
+	background-color: rgba(71, 216, 203, 1);
+	background-clip: padding-box;
+}
+header section {
+	min-height: 42dp;
+	font-size: 20dp;
+	text-align: center;
+}
+header command {
+	height: 100%;
+	width: 26dp;
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+header h1 {
+	height: 42dp;
+	color: #fff;
+	line-height: 1.5;
+	font-weight: 600;
+	font-size: 21dp;
+	font-family: "Helvetica","sans-serif";
+}
+header .pull-right {
+	height: 42dp;
+}
+
+header .pull-left {
+	height: 42dp;
+}
+
+footer {
+	height: $footerHeight;
+	background-color: rgba(128, 128, 128, 1);
+}
+
+footer nav ul li a {
+	color: #b3b3b3;
+}
+
+footer nav ul li a.active, footer nav ul li a.pressed {
+	color: #fff;
+}
+
+footer nav ul li a .title {
+	display: none;
+	padding-top: 3dp;
+	line-height: 1;
+}
+
+footer nav ul li a .icon {
+	display: block;
+	margin: 0 auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 30dp;
+	height: 30dp;
+	opacity: .4;
+	transform:scale(.7);
+}
+
+footer nav ul li a.active .icon {
+	opacity: 1;
+	transform:scale(1);
+}
+
+.reScaleBounce {
+	animation: reScaleBounce .4s linear;
+}
+
+.scaleBounce {
+	animation: scaleBounce .4s linear;
+}
+
+@-webkit-keyframes reScaleBounce {
+	0% {
+		-webkit-transform:scale(1.5);
+	}100%{
+		-webkit-transform:scale(1);
+	}
+}
+
+@-webkit-keyframes scaleBounce {
+	0% {
+		-webkit-transform:scale(.6);
+	}50%{
+		-webkit-transform:scale(1); 
+	}70%{
+		-webkit-transform:scale(1.1); 
+	}100%{
+		-webkit-transform:scale(1);
+	}
+}
+
+
+.header-icon-me {
+	width: 32dp;
+	height: 32dp;
+	background-image: url('svg/header-icon-me.svg');
+	background-size: cover;
+	background-position: center;
+}
+
+.nav-icon-activity {
+	background-image: url('svg/nav-icon-home.svg');
+}
+
+.nav-icon-discover {
+	background-image: url('svg/nav-icon-discover.svg');
+}
+
+.nav-icon-message {
+	background-image: url('svg/nav-icon-message.svg');
+}
+
+.nav-icon-me {
+	background-image: url('svg/nav-icon-me.svg');
+}

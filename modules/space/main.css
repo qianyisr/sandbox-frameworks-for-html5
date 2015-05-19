@@ -1,0 +1,126 @@
+<% 
+	var headerHeight = appInfo.headerHeight*ui.scale,
+		footerHeight = appInfo.footerHeight*ui.scale
+%>
+
+#me_viewport {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	background: #f2f2f2;
+}
+
+#main_scroll {
+	padding-top: <%=headerHeight %>px;
+	padding-bottom: <%=footerHeight %>px;
+	background: #fff;
+}
+	.header {
+	}
+		.header .banner {
+			position: absolute;
+			top: 0;
+			z-index: -1;
+			width: 100%;
+			height: <%=ui.scale*140 + headerHeight %>px;
+			overflow: hidden;
+		}
+			.header .banner .bg {
+				position: absolute;
+				width: 100%;
+				height: <%=ui.scale*140 + headerHeight %>px;
+				background-color: #444;
+				background-image: url('<%=module.uri %>/images/banner.png');
+				background-position: center;
+				background-size: cover;
+				-webkit-transform: translate(0px, 0px) translateZ(0px) scale(1);
+				transform: translate(0px, 0px) translateZ(0px) scale(1);
+			}
+
+		.header .info {
+			padding: <%=ui.scale*95 %>px <%=ui.scale*10 %>px <%=ui.scale*10 %>px;
+		}
+		.header .avt {
+			position: relative;
+			z-index: 99;
+			width: <%=ui.scale*80 %>px;
+			height: <%=ui.scale*80 %>px;
+			background-color: #ccc;
+			background-size: cover;
+			border-radius: <%=ui.scale*40 %>px;
+		}
+		.header .name {
+			color: #47d8cb;
+	        font-size: <%=ui.scale*24 %>px;
+	        font-weight: bold;
+		}
+		.header .location {
+			color: #b3b3b3;
+			font-size: <%=ui.scale*16 %>px;
+		}
+		.header .location i {
+			display: inline-block;
+			width: <%=ui.scale*16 %>px;
+			height: <%=ui.scale*16 %>px;
+			background-size: auto 100%;
+			background-position: center right;
+			background-repeat: no-repeat;
+		}
+		.header .location i.boy {
+			background-image: url('<%=module.uri %>/svg/boy.svg');
+		}
+		.header .location i.girl {
+			background-image: url('<%=module.uri %>/svg/girl.svg');
+		}
+		.header .motto {
+			margin-bottom: <%=ui.scale*10 %>px;
+			color: #808080;
+	        font-size: <%=ui.scale*18 %>px;
+		}
+		.header .setting {
+			margin-bottom: <%=ui.scale*10 %>px;
+			height: <%=ui.scale*40 %>px;
+			line-height: <%=ui.scale*40 %>px;
+			background: #ccc url('<%=module.uri %>/svg/setting.svg') <%=ui.scale*10 %>px center no-repeat;
+			background-size: auto 70%;
+			font-size: <%=ui.scale*20 %>px;
+			color: #fff;
+			text-align: center;
+			-webkit-border-radius: <%=ui.scale*6 %>px;
+			border-radius: <%=ui.scale*6 %>px;
+			font-weight: bold;
+		}
+
+	.htitle {
+		padding: 0 <%=ui.scale*10 %>px;
+		height: <%=ui.scale*35 %>px;
+		line-height: <%=ui.scale*35 %>px;
+		background: #f2f2f2;
+		font-size: <%=ui.scale*18 %>px;
+		color: #b3b3b3;
+	}
+
+	.h-list ul {
+		padding: <%=ui.scale*15 %>px 0 <%=ui.scale*15 %>px <%=ui.scale*10 %>px;
+	}
+	.h-list ul li {
+		float: left;
+		margin-right: <%=ui.scale*10 %>px;
+		width: <%=ui.scale*44 %>px;
+		height: <%=ui.scale*44 %>px;
+		background-color: #ccc;
+		background-size: cover;
+	}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+@media (max-width: 800px) {
+	#main #comments {
+		margin: 0dp;
+		width: auto;
+		background: red;
+		background: img("example.png");
+	}
+	#main #buttons {
+		padding: 0.5dp 10dp;
+		width: 0.934dp;
+		color: blue;
+	}
+}
+
+@section (#ddd) {
+	.wewqewq {
+		width: 40dp;
+	}
+	.eee {
+		text-decoration: none;
+	}
+}
+
+
+#main #content {
+	margin: 0 7.6%;
+	width: auto;
+}
+#nav-below {
+	border-bottom: 1dp solid #ddd;
+	margin-bottom: 1.625em;
+	background-image: url(/images/im.jpg);
+	transform: scale(.5);
+	appearance: none;
+}

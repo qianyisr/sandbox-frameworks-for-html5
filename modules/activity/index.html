@@ -1,0 +1,15 @@
+{{% var  
+	data = {}; 
+	data.list = feed.rows; 
+	data.ui = ui;
+	data.config = appInfo;
+	data.lang = lang;
+}}
+
+<div id="wrapper">
+	<div id="scroller" class="feed">
+
+		{{include('feed_list', data)}}
+
+	</div>
+</div>

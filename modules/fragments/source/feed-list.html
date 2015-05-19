@@ -1,0 +1,40 @@
+{{if list.length > 0}}
+
+	{{each list as value i}}
+		<section class="rows">
+			<div class="avt" style="background-image: url('{{config.resourcesUrl}}user/{{value.uid}}.jpg')"></div>
+			<div class="bar">
+				<time>{{value.time}}</time>
+				<div class="name">{{value.name}}</div>
+			</div>
+
+			<div class="text">{{value.text}}</div>
+			<div class="content">
+				<div class="msg">{{lang.score}}: <b>{{value.content.score}}</b> {{lang.times}}</div>
+				<div class="banner" style="background-image: url('{{config.resourcesUrl}}app/banner/{{value.content.gameId}}.jpg')">
+					<div class="info">
+						<div class="icon" style="background-image: url('{{config.resourcesUrl}}app/icon/{{value.content.gameId}}.jpg')"></div>
+						<div class="name">{{value.content.gameName}}</div>
+					</div>
+				</div>
+				<div class="action">
+					<span class="meta">{{value.content.played}} {{lang.peoplePlayed}}<span>
+					<button>{{lang.challenge}}</button>
+				</div>
+				<div class="footerBar">
+					<div class="interactive">
+						<button class="praise">{{value.content.hot}}</button>
+						<button class="comment">{{value.content.comment}}</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	{{/each}}
+
+{{else}}
+
+	<div>
+		暂无数据
+	</div>
+
+{{/if}}

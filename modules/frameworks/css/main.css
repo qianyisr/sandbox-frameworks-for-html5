@@ -1,0 +1,113 @@
+body {
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "liga", "kern";
+	font-family: "Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+}
+
+header {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+@global {
+	headerH : 62dp;
+	footerH : 60dp;
+	bottom : 1000;
+}
+
+@var {
+	bottom : 1000;
+}
+
+@section (header) {
+	@var {
+		bottom : 10px;
+	}
+	section {
+		position: relative;
+	}
+	.pull-right, .pull-left {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+	}
+	.pull-right {
+		right:15.5dp;
+	}
+	.pull-left {
+		bottom: $bottom;
+		left: Math(10dp - 2px*5 +6dp+ $bottom); 
+	}
+	@if ($width > 4900) {
+		.pull-left {
+			background: #000;
+			bottom: $bottom;
+			left: Math(10dp - 2px*5 +6dp+ $bottom); 
+		}
+	}
+}
+
+header .pull-right {
+	@extend: header;
+	bottom: $bottom;
+}
+
+/**
+ * footer
+ * ============================================================================================
+ * 假如header内部有fragments或btn等则不在此处写
+*/
+footer {
+	position: absolute; /*头部固定*/
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+}
+
+footer section {
+	position: relative;
+	background: rgba(34, 34, 34, .8);
+}
+
+footer section#blurlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+    overflow: hidden;
+    background: rgba(128, 128, 128, 1);
+}
+
+footer section#blurlay iframe {  
+    filter: blur(20px);
+	top: auto;
+	bottom: 0;
+}
+
+footer nav ul {
+	display: $vendors+box;
+}
+
+footer nav ul li {
+    box-flex: 1; 
+    list-style: none;
+}
+
+footer nav ul li a {
+	display: block;
+	padding: 15dp 0;
+	font-size: 15dp;
+	text-align: center;
+	text-decoration: none;
+}
+
+footer nav ul li a {
+	font-weight: bold;
+}
